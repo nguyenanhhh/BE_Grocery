@@ -48,7 +48,7 @@ public class Product {
 	    @Column(name = "categoryID")
 	    private int categoryID;
 	    @Column(name = "storeID")
-	    private Boolean storeID;
+	    private int storeID;
 	    @Column(name = "rating")
 	    private float rating;
 	    
@@ -126,10 +126,10 @@ public class Product {
 		public void setCategoryID(int categoryID) {
 			this.categoryID = categoryID;
 		}
-		public Boolean getStoreID() {
+		public int getStoreID() {
 			return storeID;
 		}
-		public void setStoreID(Boolean storeID) {
+		public void setStoreID(int storeID) {
 			this.storeID = storeID;
 		}
 		public float getRating() {
@@ -157,7 +157,7 @@ public class Product {
 			this.img = img;
 		}
 		public Product(int productID, String name, String slug, String description, int price, int promotionalPrice,
-				int quantity, int sold, Boolean isActive, Boolean isSelling, int categoryID, Boolean storeID,
+				int quantity, int sold, Boolean isActive, Boolean isSelling, int categoryID, int storeID,
 				float rating, Date createdAt, Date updatedAt, String img) {
 			super();
 			this.productID = productID;
