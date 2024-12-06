@@ -34,7 +34,7 @@ public class ReviewController {
 		        return new ResponseEntity<>(savedProduct, HttpStatus.CREATED);
 		    }
 	    @PostMapping("/checkdanhgia")
-	    public List<ReviewModel> kiemtradanhgia(@RequestParam("orderID") int id,@RequestParam("userID") int userid) {
+	    public List<Review> kiemtradanhgia(@RequestParam("orderID") int id,@RequestParam("userID") int userid) {
 	        return repositiry.checkdadanhgia(id,userid);
 	    }
 	    

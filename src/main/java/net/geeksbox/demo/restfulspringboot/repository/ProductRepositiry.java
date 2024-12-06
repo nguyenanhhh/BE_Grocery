@@ -25,6 +25,6 @@ public interface ProductRepositiry extends  JpaRepository<Product, Integer> {
 	@Query(value="select  * from [Products] where name LIKE ? ",nativeQuery = true)
 	public List<Product> timkiem(String key);
 	
-	@Query(value="select Products.productID, Products.name, products.img, bang1.countSold From Products inner join (select  CartItem.productID as productID, sum(count) as countSold  From Products, CartItem where Products.storeID=?1 and Products.productID=CartItem.productID and YEAR(CartItem.created_At)=?2 group by CartItem.productID order by sum(count) DESC OFFSET 0 rows fetch next 5 rows only) as bang1 on Products.productID = bang1.productID", nativeQuery=true)
+	@Query(value="select productID , name, img, sold as countSold From Products where storeID = ? order by sold DESC OFFSET 0 rows fetch next 5 rows only", nativeQuery=true)
 	public List<Object[]> top5productOfStore(int storeID, int year);
 }

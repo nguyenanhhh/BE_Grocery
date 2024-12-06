@@ -13,7 +13,7 @@ import net.geeksbox.demo.restfulspringboot.model.User;
 
 public interface ReviewRepositiry extends JpaRepository<Review, Integer> {
 	@Query(value="select * from [Review] where orderID=?1 and userID=?2 ",nativeQuery = true)
-	public List<ReviewModel> checkdadanhgia(int orderID,int userID);
+	public List<Review> checkdadanhgia(int orderID,int userID);
 	
 }
 
